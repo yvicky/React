@@ -37,8 +37,8 @@ jobs:
 
       # run tests!
       - run:
-        shell: /bin/sh
-        command: |
-          echo Running test
-          set +e
-          yarn test
+          shell: /bin/sh
+          command: |
+            echo Running test
+            set +e
+            yarn test
