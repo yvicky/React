@@ -1,6 +1,6 @@
 # Step 0:
 
-Terraform an new EC2 isntace.
+Terraform an new EC2 instance.
 
 # Step 1:
 
