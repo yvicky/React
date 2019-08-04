@@ -1,14 +1,19 @@
 # Step 0:
 
-Terraform an new EC2 instance.
+Terraform an new EC2 instance:
+1. https://pragmacoders.com/blog/creating-an-ec2-instance-with-terraform
 
 # Step 1:
+
+Set up Jenkins or CircleCI to run Ansible, which then sets up Kuberenetis.
+
+# Step 2:
 
 Set-up Cluster to include new EC2 node and its pods via Kubernetis and Kubeadm:
 1. https://www.cloudtechnologyexperts.com/kubeadm-on-aws/
 2. https://www.patricia-anong.com/blog/2018/8/kubernetes-in-aws-using-kops
 
-# Step 2:
+# Step 3:
 
 React app in AWS EC2, Provisioned by Kuberentis ( Kubeadm agent )
 get code in the ec2 machine after ssh'ing in:
@@ -18,12 +23,12 @@ get code in the ec2 machine after ssh'ing in:
 4. NPM #2: npm install node-sass
 5. NPM #3: npm start / npm build run 
 
-# Step 3:
+# Step 4:
 
 Add new Pod / Node to Cluster:
 kubeadm join 172.31.36.22:6443 --token <> \
     --discovery-token-ca-cert-hash <>
 
-# Step 4:
+# Step 5:
 
 Dashboarding: https://github.com/kubernetes/dashboard
