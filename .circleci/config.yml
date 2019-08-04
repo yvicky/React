@@ -28,10 +28,17 @@ jobs:
 
       - run: yarn install
 
+      - run: npm run build
+
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run:
+        shell: /bin/sh
+        command: |
+          echo Running test
+          set +e
+          yarn test
