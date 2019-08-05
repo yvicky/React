@@ -42,4 +42,4 @@ Steps:
 
 ## Issues?
 
-If stuck with ClusterCreating, kill the beast of nodes and pods by doing 'kubectl drain <node name>  --ignore-daemonsets --delete-local-data'
+If stuck with ClusterCreating, kill the beast of nodes and pods by doing 'kubectl drain "<node name>" --ignore-daemonsets --delete-local-data'
