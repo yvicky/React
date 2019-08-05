@@ -28,7 +28,18 @@ get code in the ec2 machine after ssh'ing in:
 Add new Pod / Node to Cluster:
 kubeadm join 172.31.36.22:6443 --token <> \
     --discovery-token-ca-cert-hash <>
+    
+## Issues?
+
+If cannot join the cluster, do 'kubeadm token create --print-join-command'
 
 # Step 5:
 
 Dashboarding: https://github.com/kubernetes/dashboard
+Steps:
+1. enable tcp port 8443 in AWS or any other provider
+2. create new pods via installation comamnds, found in latest version from https://github.com/kubernetes/dashboard/releases
+
+## Issues?
+
+If stuck with ClusterCreating, kill the beast of nodes and pods by doing 'kubectl drain <node name>  --ignore-daemonsets --delete-local-data'
