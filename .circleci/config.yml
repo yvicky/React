@@ -44,3 +44,6 @@ jobs:
             EXIT_CODE=0
             yarn test || EXIT_CODE=$?
             echo $EXIT_CODE
+
+      - store_artifacts:
+          path: ./build
