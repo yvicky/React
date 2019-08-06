@@ -5,7 +5,7 @@ Terraform an new EC2 instance:
 
 # Step 1:
 
-Set up Jenkins or CircleCI to run Ansible, which then sets up Kuberenetis.
+Set up Jenkins or CircleCI to run Ansible, which then sets up Kubernetis.
 
 # Step 2:
 
@@ -42,8 +42,13 @@ Dashboarding: https://github.com/kubernetes/dashboard
 
 Steps:
 1. enable tcp port 8443 in AWS or any other provider
-2. create new pods via installation comamnds, found in latest version from https://github.com/kubernetes/dashboard/releases
+2. create new pods via installation commands, found in latest version from https://github.com/kubernetes/dashboard/releases
 
 ## Issues?
 
 If stuck with ClusterCreating, kill the beast of nodes and pods by doing ```kubectl drain <node name> --ignore-daemonsets --delete-local-data```
+If still stuck, remove the pods and nodes by doing:
+1. Namespace(s) - ```kubectl delete deployment <deployment name>``` (with ```--force``` if do not care about mapped storage)
+2. Pod(s) - ```kubectl delete pods <pod name>``` (with ```--force``` if do not care about mapped storage)
+3. Node(s) - ```kubectl delete nodes <node name>``` (with ```--force``` if do not care about mapped storage)
+4. Deployment(s) - ```kubectl delete deployment <deployment name>``` (with ```--force``` if do not care about mapped storage)
