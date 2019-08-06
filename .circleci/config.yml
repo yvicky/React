@@ -40,5 +40,7 @@ jobs:
           shell: /bin/sh
           command: |
             echo Running test
-            set +e
-            yarn test
+            set -e
+            EXIT_CODE=0
+            yarn test || EXIT_CODE=$?
+            echo $EXIT_CODE

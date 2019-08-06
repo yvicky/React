@@ -5,7 +5,7 @@ Terraform an new EC2 instance:
 
 # Step 1:
 
-Set up Jenkins or CircleCI to run Ansible, which then sets up Kuberenetis.
+Set up Jenkins or CircleCI to run Ansible, which then sets up Kubernetis.
 
 # Step 2:
 
@@ -17,18 +17,38 @@ Set-up Cluster to include new EC2 node and its pods via Kubernetis and Kubeadm:
 
 React app in AWS EC2, Provisioned by Kuberentis ( Kubeadm agent )
 get code in the ec2 machine after ssh'ing in:
-1. SSH: ssh -i ~/<>.pem ubuntu@<>
-2. GIT: Git clone <>
-3. NPM #1: sudo npm install
-4. NPM #2: npm install node-sass
-5. NPM #3: npm start / npm build run 
+1. SSH: ```ssh -i ~/<file name>.pem ubuntu@<public or private ip>```
+2. GIT: ```git clone <>```
+3. NPM #1: ```sudo npm install```
+4. NPM #2: ```npm install node-sass```
+5. NPM #3: ```npm start / npm build run```
+
+## Issues?
+
+You might want to update yarn dependecies by doing ```sudo yarn upgrade caniuse-lite browserslist```
 
 # Step 4:
 
 Add new Pod / Node to Cluster:
-kubeadm join 172.31.36.22:6443 --token <> \
-    --discovery-token-ca-cert-hash <>
+```kubeadm join <private ip>:6443 --token <token> --discovery-token-ca-cert-hash <hash>```
+    
+## Issues?
+
+If cannot join the cluster, do ```kubeadm token create --print-join-command```
 
 # Step 5:
 
 Dashboarding: https://github.com/kubernetes/dashboard
+
+Steps:
+1. enable tcp port 8443 in AWS or any other provider
+2. create new pods via installation commands, found in latest version from https://github.com/kubernetes/dashboard/releases
+
+## Issues?
+
+If stuck with ClusterCreating, kill the beast of nodes and pods by doing ```kubectl drain <node name> --ignore-daemonsets --delete-local-data```
+If still stuck, remove the pods and nodes by doing:
+1. Namespace(s) - ```kubectl delete deployment <deployment name>``` (with ```--force``` if do not care about mapped storage)
+2. Pod(s) - ```kubectl delete pods <pod name>``` (with ```--force``` if do not care about mapped storage)
+3. Node(s) - ```kubectl delete nodes <node name>``` (with ```--force``` if do not care about mapped storage)
+4. Deployment(s) - ```kubectl delete deployment <deployment name>``` (with ```--force``` if do not care about mapped storage)
