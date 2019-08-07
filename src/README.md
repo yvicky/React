@@ -10,7 +10,7 @@ Set up Jenkins or CircleCI to run Ansible, which then sets up Kubernetis.
 # Step 2:
 
 Set-up Cluster to include new EC2 node and its pods via Kubernetis and Kubeadm:
-1. https://www.cloudtechnologyexperts.com/kubeadm-on-aws/
+1. https://www.cloudtechnologyexperts.com/kubeadm-on-aws/ (outdated; dashboard is not working. See README.md under '<root>/src')
 2. https://www.patricia-anong.com/blog/2018/8/kubernetes-in-aws-using-kops
 
 # Step 3:
