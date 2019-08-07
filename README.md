@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prerequistes
+
+In order for thios app to be swerved w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!).
+
 ## Available Scripts
 
 In the project directory, you can run:
