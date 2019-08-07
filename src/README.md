@@ -48,7 +48,7 @@ Steps:
 
 If stuck with ClusterCreating, kill the beast of nodes and pods by doing ```kubectl drain <node name> --ignore-daemonsets --delete-local-data```
 If still stuck, remove the pods and nodes by doing:
-1. Namespace(s) - ```kubectl delete deployment <deployment name>``` (with ```--force``` if do not care about mapped storage)
+1. Namespace(s) - ```kubectl delete ns <namespace name>``` (with ```--force``` if do not care about mapped storage)
 2. Pod(s) - ```kubectl delete pods <pod name>``` (with ```--force``` if do not care about mapped storage)
 3. Node(s) - ```kubectl delete nodes <node name>``` (with ```--force``` if do not care about mapped storage)
 4. Deployment(s) - ```kubectl delete deployment <deployment name>``` (with ```--force``` if do not care about mapped storage)
