@@ -1,10 +1,12 @@
 [![CircleCI](https://circleci.com/gh/HolimaX/React.svg?style=svg&circle-token=1ad83382b085ffc81cd9c161999280cfc11453a3)](https://circleci.com/gh/HolimaX/React)
 
+# Introduction
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Prerequistes
 
-In order for thios app to be swerved w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!).
+In order for this app to be served w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!).
 
 ## Available Scripts
 
