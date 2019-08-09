@@ -2,7 +2,11 @@
 
 # Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project:
+
+ - was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ - was forked from original source to further be used as tempalte for developments
+ - was ajusted to include integration with technologies, mentioned in github topics and can be seen in README.md files within folders. For more details, see ```https://github.com/HolimaX/React/blob/<branch>/src/README.md``` file as one of such inclusives.
 
 ## Prerequistes
 
