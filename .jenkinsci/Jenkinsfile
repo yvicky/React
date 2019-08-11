@@ -15,9 +15,10 @@ pipeline {
         sh 'sleep 600'
         sh 'kubectl apply --validate=true --dry-run=true --filename=task_2.yaml'
         sh 'kubectl apply -f task_2.yaml'
-        sh 'sleep 60'
+        sh 'sleep 600'
         sh 'npm run build'
         sh 'npm run deploy'
+        sh 'npm publish --dry-run'
         sh 'npm publish'
       }
     } 
