@@ -36,7 +36,7 @@ pipeline {
         sh 'terraform apply'
         sh 'sleep 600'
         // aws k8s self-managed cluster
-        dir('./.k8sconfig) {
+        dir('../.k8sconfig) {
           sh 'kubectl apply --validate=true --dry-run=true --filename=task_2.yaml'
           sh 'kubectl apply -f task_2.yaml'
         }
