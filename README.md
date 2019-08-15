@@ -14,7 +14,11 @@ In order for this app to be served w/o 'serve' tool, you need to install either 
 
 ## Available Scripts
 
-In the project directory, you can run:
+ - In the project ./.jenkinsci directory, you can use Jenkins(file) to execute complete deployment process to AWS.
+
+ - In the project ./. (root) directrory, you can run ```terraform``` commands to indivudually create AWS resources.
+
+ - In the project ./. (root) directory, you can run:
 
 ### `npm start`
 
