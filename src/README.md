@@ -5,7 +5,7 @@ Terraform an new EC2 instance:
 
 # Step 1:
 
-Set up Jenkins or CircleCI to run Ansible, which then sets up Kubernetis.
+Set up Jenkins or CircleCI to run Ansible, which then sets up Application in Kubernetis.
 
 # Step 2:
 
