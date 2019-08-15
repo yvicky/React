@@ -5,10 +5,10 @@
 This project:
 
  - was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
- - was forked from original source to further be used as tempalte for developments
- - was ajusted to include integration with technologies, mentioned in github topics and can be seen in README.md files within folders. For more details, see ```https://github.com/HolimaX/React/blob/<branch>/src/README.md``` file as one of such inclusives.
+ - was forked from original source to further be used as template for developments (like https://github.com/HolimaX/libhacontimig)
+ - was ajusted to include integration with technologies, mentioned in github topics and can be seen in README.md files within folders. For more details, see ```https://github.com/HolimaX/React/blob/<branch>/src/README.md``` file as one of such inclusives. React-based Application is still kept isolated to ensure overall integrity and transaprency.
 
-## Prerequistes
+## Application Prerequistes
 
 In order for this app to be served w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!).
 
@@ -16,7 +16,7 @@ In order for this app to be served w/o 'serve' tool, you need to install either 
 
  - In the project ./.jenkinsci directory, you can use Jenkins(file) to execute complete deployment process to AWS.
 
- - In the project ./. (root) directrory, you can run ```terraform``` commands to indivudually create AWS resources.
+ - In the project ./. (root) directrory, you can run ```terraform``` commands to individually create AWS resources.
 
  - In the project ./. (root) directory, you can run:
 
