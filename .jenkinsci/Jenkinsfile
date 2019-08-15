@@ -1,0 +1,26 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checkout') {
+      step
+        sh 'This will retrieve sourcecode for ecosystem...'
+        checkout scm
+      }
+    }
+    stage('Provision - Contenarize - Build - Deploy') {
+      steps {
+        sh 'This will build React Frontend for the defined backend...'
+        sh 'terraform fmt && terraform validate && terraform plan'
+        sh 'terraform apply'
+        sh 'sleep 600'
+        sh 'kubectl apply --validate=true --dry-run=true --filename=task_2.yaml'
+        sh 'kubectl apply -f task_2.yaml'
+        sh 'sleep 600'
+        sh 'npm run build'
+        sh 'npm run deploy'
+        sh 'npm publish --dry-run'
+        sh 'npm publish'
+      }
+    } 
+  }
+}
