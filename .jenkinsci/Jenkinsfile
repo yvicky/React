@@ -20,9 +20,9 @@ pipeline {
       // workflow validation
       timeout(time: 30, unit: 'SECONDS') {
         input {
-          message "Should we continue the execution?"
-          ok "Yes, we should."
-          submitter "root"
+          message "Should we continue the execution?",
+          ok "Yes, we should.",
+          submitter "root",
           parameters {
               [booleanParam(defaultValue: true, 
                           description: 'Yes, continue.',name: 'Yes?')]
@@ -32,19 +32,19 @@ pipeline {
       steps {
         // aws resources
         sh 'This will preprae ecosystem and build React Frontend for the defined backend...'
-        dir('../.) {
+        dir('../.') {
           sh 'terraform fmt && terraform validate && terraform plan'
           sh 'terraform apply'
         }
         sh 'sleep 600'
         // aws k8s self-managed cluster
-        dir('../.k8sconfig) {
+        dir('../.k8sconfig') {
           sh 'kubectl apply --validate=true --dry-run=true --filename=task_2.yaml'
           sh 'kubectl apply -f task_2.yaml'
         }
         sh 'sleep 600'
         // react application
-        dir('../.) {
+        dir('../.') {
           sh 'npm run build'
           sh 'npm run deploy'
           sh 'npm publish --dry-run'
