@@ -1,0 +1,5 @@
+---
+- hosts: node
+  tasks:
+    - name: Joining the master
+      command: kubectl join
