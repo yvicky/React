@@ -30,4 +30,4 @@ yarn-error.log*
 .terraform/
 
 # Sensitive Files
-/variables.tf
+.terraformconfig/variables.tf

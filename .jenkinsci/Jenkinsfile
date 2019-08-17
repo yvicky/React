@@ -12,7 +12,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // source
-        sh 'This will retrieve sourcecode for ecosystem...'
+        sh "echo 'This will retrieve sourcecode for ecosystem...'"
         checkout scm
       }
     }
@@ -31,19 +31,22 @@ pipeline {
       }
       steps {
         // aws resources
-        sh 'This will preprae ecosystem and build React Frontend for the defined backend...'
-        dir('../.') {
+        sh "echo 'This will prepare ecosystem and build React Frontend for the defined backend...'"
+        sh "echo ' Creating resources ...'"
+        dir('../.terraformconfig') {
           sh 'terraform fmt && terraform validate && terraform plan'
           sh 'terraform apply'
         }
         sh 'sleep 600'
         // aws k8s self-managed cluster
+        sh "echo ' Creating ecosystem ...'"
         dir('../.k8sconfig') {
           sh 'kubectl apply --validate=true --dry-run=true --filename=task_2.yaml'
           sh 'kubectl apply -f task_2.yaml'
         }
         sh 'sleep 600'
         // react application
+        sh "echo ' Creating applications ...'"
         dir('../.') {
           sh 'npm run build'
           sh 'npm run deploy'
