@@ -32,22 +32,33 @@ pipeline {
       steps {
         // aws resources
         sh "echo 'This will prepare ecosystem and build React Frontend for the defined backend...'"
-        sh "echo ' Creating resources ...'"
+        sh "echo ' [Task 1] Creating resources ...'"
         dir('../.terraformconfig') {
-          sh 'terraform fmt && terraform validate && terraform plan'
-          sh 'terraform apply'
+          sh 'which terraform'
+          sh 'terraform init && terraform fmt && terraform validate -check-variables=true && terraform plan'
+          sh 'terraform apply -refresh=true'
         }
         sh 'sleep 600'
         // aws k8s self-managed cluster
-        sh "echo ' Creating ecosystem ...'"
+        sh "echo ' [Task 2] Creating ecosystem ...'"
         dir('../.k8sconfig') {
+          sh 'which kubectl'
           sh 'kubectl apply --validate=true --dry-run=true --filename=task_2.yaml'
           sh 'kubectl apply -f task_2.yaml'
         }
         sh 'sleep 600'
+        // aws k8s self-managed node
+        sh "echo ' [Task 3] Creating HA setup ...'"
+        dir('../.ansibleconfig') {
+          sh 'which ansible'
+          sh 'ansible-playbook task_3.yml --check --diff'
+          sh 'ansible-playbook task_3.yml'
+        }
+        sh 'sleep 600'
         // react application
-        sh "echo ' Creating applications ...'"
+        sh "echo ' [Task 4] Creating applications ...'"
         dir('../.') {
+          sh 'which npm'
           sh 'npm run build'
           sh 'npm run deploy'
           sh 'npm publish --dry-run'

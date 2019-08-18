@@ -16,7 +16,11 @@ In order for this React app to be served w/o 'serve' tool, you need to install e
 
  - In the project ./.jenkinsci directory, you can use Jenkins(file) to execute complete deployment process to AWS. The step(s) assumes that the AWS AMI and AWS Launch Template is created and available un your AWS account.
 
- - In the project ./. (root) directrory, you can run ```terraform``` commands to individually create AWS resources. The step(s) assumes the ```terraform``` is installed and available in the PATH.
+ - In the project ./. (root) directrory, you can run ```terraform``` commands to individually create AWS resources. The step(s) assumes the ```terraform``` is installed and available in the PATH. For adjsutments, configuration files are stored in ./.terraformconfig .
+
+ - In the project ./. (root) directrory, you can run ```ansible``` commands to individually create AWS resources. The step(s) assumes the ```ansible``` is installed and available in the PATH. For adjsutments, configuration files are stored in ./.ansibleconfig .
+
+ - In the project ./. (root) directrory, you can run ```kubectl``` commands to individually create AWS resources. The step(s) assumes the ```kubectl``` is installed and available in the PATH. For adjsutments, configuration files are stored in ./.k8sconfig .
 
  - In the project ./. (root) directory, you can run (assuming ```nodejs```, ```npm``` and ```yarn``` is installed and available in the PATH):
 
