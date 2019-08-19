@@ -3,3 +3,5 @@
   tasks:
     - name: Joining the master
       command: kubectl join
+      args:
+        executable: /bin/bash
