@@ -10,9 +10,7 @@
     "email" : "hx@inbox.lv"
   },
   "contributors": [
-    "name" : "Linards Liepins",
-    "email" : "hx@inbox.lv,
-    "url" : "https://linardsliepins.wordpress.com"
+    "Linards Liepins <hx@inbox.lv> (https://linardsliepins.wordpress.com)"
   ],
   "homepage": "https://www.turing.ly",
   "license": "MIT",
