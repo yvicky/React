@@ -1,10 +1,28 @@
 [![CircleCI](https://circleci.com/gh/HolimaX/React.svg?style=svg&circle-token=1ad83382b085ffc81cd9c161999280cfc11453a3)](https://circleci.com/gh/HolimaX/React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Introduction
+
+This project:
+
+ - was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ - was forked from original source to further be used as template for developments (like https://github.com/HolimaX/libhacontimig)
+ - was ajusted to include integration with technologies (like Terraform, Ansible, Kubernetes), mentioned in github topics and can be seen in README.md files within folders. For more details, see ```https://github.com/HolimaX/React/blob/<branch>/src/README.md``` file as one of such inclusives. React-based Application is still kept isolated to ensure overall integrity and transaprency.
+
+## Application Prerequistes
+
+In order for this React app to be served w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!) within non-control-plane (Master) node.
 
 ## Available Scripts
 
-In the project directory, you can run:
+ - In the project ./.jenkinsci directory, you can use Jenkins(file) to execute complete deployment process to AWS. The step(s) assumes that the AWS AMI and AWS Launch Template is created and available un your AWS account.
+
+ - In the project ./. (root) directrory, you can run ```terraform``` commands to individually create AWS resources. The step(s) assumes the ```terraform``` is installed and available in the PATH. For adjsutments, configuration files are stored in ./.terraformconfig .
+
+ - In the project ./. (root) directrory, you can run ```ansible``` commands to individually create AWS resources. The step(s) assumes the ```ansible``` is installed and available in the PATH. For adjsutments, configuration files are stored in ./.ansibleconfig .
+
+ - In the project ./. (root) directrory, you can run ```kubectl``` commands to individually create AWS resources. The step(s) assumes the ```kubectl``` is installed and available in the PATH. For adjsutments, configuration files are stored in ./.k8sconfig .
+
+ - In the project ./. (root) directory, you can run (assuming ```nodejs```, ```npm``` and ```yarn``` is installed and available in the PATH):
 
 ### `npm start`
 
