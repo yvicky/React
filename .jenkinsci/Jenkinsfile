@@ -61,6 +61,13 @@ pipeline {
           sh 'which npm'
           sh 'npm run build'
           sh 'npm run deploy'
+          sh "echo \"//npm.pkg.github.com/:username=foo\" >> ~/.npmrc"
+          sh "echo \"//npm.pkg.github.com/:_password=bar==\" > ~/.npmrc"
+          sh "echo \"//npm.pkg.github.com/:email=user@mail.com\" >> ~/.npmrc"
+          sh "echo \"//npm.pkg.github.com/:always-auth=true\" >> ~/.npmrc"
+          //sh "npm set registry https://npm.pkg.github.com/"
+          sh "npm login --registry=https://npm.pkg.github.com/"
+          sh "npm version-tag patch"
           sh 'npm publish --dry-run'
           sh 'npm publish'
         }
