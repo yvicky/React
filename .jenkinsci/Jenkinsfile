@@ -39,7 +39,7 @@ pipeline {
       steps {
         //TODO: Implement jenkinsci/JenkinsPipelineUnit
         script {
-          library "generic-test@${params.LIB_VERSION}"
+          library "generic_test@${params.LIB_VERSION}"
         }
       }
     }
