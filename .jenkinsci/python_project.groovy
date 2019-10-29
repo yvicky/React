@@ -6,7 +6,7 @@ package com.python_project
 // Usage: GitManager.clone(this, "https://github.com/jfrogdev/project-examples.git", "*/master", "myGitUserID");
 class Python_GitManager
 {
-    public static void clone(Script scriptRef, String gitURLString, String branchID, String gitUserID)
+    public static void clone(Script scriptRef, String gitURLString, String branchID, String gitUserID, String soLibStoreID, String soLibStorePwd)
     {
         // clone repo with integration
         scriptRef.checkout([
@@ -17,9 +17,23 @@ class Python_GitManager
             submoduleCfg: [], 
             userRemoteConfigs: [[credentialsId: gitUserID, url: gitURLString]]
         ])
+        // download libs if it is not found in repo above
+        if (!File(branchID + '/libgopyu.so').exists()) {
+            new File(branchID + "/libgopyu.so").withOutputStream { out ->
+                def url = new URL("https://23-108527988-gh.circle-artifacts.com/0/go/src/github.com/HolimaX/libgopyu/build/").openConnection()
+                Authenticator.setDefault (new Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication (soLibStoreID, soLibStorePwd.toCharArray());
+                    }
+                });
+                //url.setRequestProperty("Authorization", remoteAuth);
+                out << url.inputStream
+            }
+        }
+        System.loadLibrary(branchID + '/libgopyu.so');
         // query for integration directory and call KeepAlive logic to see if object is compliant with infrastructure
-        //doKeepAliveviaREST();
+        setJNIInterface();
         // Do anything needful to achieve the needful...
-        //doMagic();
+        refreshJNIInterface();
     }
 }

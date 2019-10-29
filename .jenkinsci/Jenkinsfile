@@ -8,7 +8,7 @@ NOT TESTED ON REAL JENKINS(x) ENVIRONMENT. YET! :)
 //TODO: Add check for compatibility for shared libraries features like dynamic loading
 // Loading libraries from supported projects via Groovy libs to use created SO objects
 // Compliant with feature/C_SO_integration branches for other repos
-@Library(['python_project@1.0','go_project@1.0','java_project@1.0']) _
+@Library(['python_project@1.0.0','go_project@1.0.0','java_project@1.0.0']) _
 
 // main body
 pipeline {
