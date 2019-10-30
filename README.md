@@ -10,7 +10,7 @@ This project:
 
 ## Application Prerequistes
 
-In order for this React app to be served w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!) within non-control-plane (Master) node.
+In order for this React app to be served w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!) within non-control-plane (Master) node(s).
 
 ## Available Scripts
 
