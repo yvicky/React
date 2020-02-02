@@ -28,7 +28,7 @@ jobs:
 
       - run: yarn install
 
-      - run: cd system && npm run build
+      - run: cd system && npm install && npm run build
 
       - save_cache:
           paths:
