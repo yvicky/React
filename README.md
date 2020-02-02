@@ -10,7 +10,9 @@ This project:
 
 ## Application Prerequistes
 
-In order for this React app to be served w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!) within non-control-plane (Master) node.
+You can establish environment in many ways. For example:
+ - In order for this React app to be started, the valid Okta connection is needed. Configuration is set up during registration phase from connected Cloud Dashboard tools (like Android Phone app).
+ - In order for this React app to be served w/o 'serve' tool, you need to install either Apache or NGNIX (but not both!) within non-control-plane (Master) node. Then, production build must be made and serving can be executed.
 
 ## Available Scripts
 
@@ -27,7 +29,7 @@ In order for this React app to be served w/o 'serve' tool, you need to install e
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3010](http://localhost:3010) to view it in the browser. Ensure PORT 3001 is accessible.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.

@@ -1,5 +1,5 @@
 {
-  "name": "@HolimaX/beerbank",
+  "name": "@HolimaX/beerbank-system",
   "proxy": "http://localhost:3001",
   "version": "0.1.2",
   "description": "Cloud Dashboard DEMO CRUD application using ReactJS",
@@ -30,13 +30,13 @@
     "url": "https://github.com/HolimaX/React.git"
   },
   "dependencies": {
-    "@okta/okta-react": "^1.2.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.12",
     "@fortawesome/free-solid-svg-icons": "^5.6.3",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@okta/okta-react": "^1.2.3",
+    "bootstrap": "^4.4.1",
     "chalk": "^2.4.2",
-    "bootstrap": "^4.2.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "node-sass": "^4.13.1",
     "popper.js": "^1.14.6",
     "react": "^16.7.0",
