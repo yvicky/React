@@ -18,8 +18,8 @@ class Python_GitManager
             userRemoteConfigs: [[credentialsId: gitUserID, url: gitURLString]]
         ])
         // download libs if it is not found in repo above
-        if (!File(branchID + '/libgopyu.so').exists()) {
-            new File(branchID + "/libgopyu.so").withOutputStream { out ->
+        if (!File(branchID + '/python_integration.cpython-36m-x86_64-linux-gnu.so').exists()) {
+            new File(branchID + "/python_integration.cpython-36m-x86_64-linux-gnu.so").withOutputStream { out ->
                 def url = new URL("https://23-108527988-gh.circle-artifacts.com/0/go/src/github.com/HolimaX/libgopyu/build/").openConnection()
                 Authenticator.setDefault (new Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
@@ -30,7 +30,7 @@ class Python_GitManager
                 out << url.inputStream
             }
         }
-        System.loadLibrary(branchID + '/libgopyu.so');
+        System.loadLibrary(branchID + '/python_integration.cpython-36m-x86_64-linux-gnu.so');
         // query for integration directory and call KeepAlive logic to see if object is compliant with infrastructure
         setJNIInterface();
         // Do anything needful to achieve the needful...
