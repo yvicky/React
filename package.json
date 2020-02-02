@@ -49,11 +49,11 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "./deploy.sh"
+    "start": "cd system && react-scripts start",
+    "build": "cd system && react-scripts build",
+    "test": "cd system && react-scripts test",
+    "eject": "cd system && react-scripts eject",
+    "deploy": "cd system && ./deploy.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
