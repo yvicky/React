@@ -20,20 +20,20 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-      #- restore_cache:
-      #    keys:
-      #      - v1-dependencies-{{ checksum "./system/package.json" }}
-      #      # fallback to using the latest cache if no exact match is found
-      #      - v1-dependencies-
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "./system/package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
-      - run: cd system && npm install
+      - run: cd system && npm install && yarn install
 
       - run: cd system && npm run build
 
-      #- save_cache:
-      #    paths:
-      #      - node_modules
-      #    key: v1-dependencies-{{ checksum "./system/package.json" }}
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "./system/package.json" }}
 
       # run tests!
       - run:
@@ -46,4 +46,4 @@ jobs:
             echo $EXIT_CODE
 
       - store_artifacts:
-          path: ./build
+          path: ./system/build
