@@ -2,7 +2,7 @@
 
 # Introduction
 
-This project:
+This project importent:
 
  - was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
  - was forked from original source to further be used as template for developments (like https://github.com/HolimaX/libhacontimig)
